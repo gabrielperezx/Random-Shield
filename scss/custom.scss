@@ -1,0 +1,265 @@
+/* ----- ----- ----- ----- */
+/* Variables */
+/* ----- ----- ----- ----- */
+$primary: #005ac5;
+$primary-hover: #0073ff;
+$primary-active: #001a43;
+
+$background: #121212;
+$on-background: #e4e2e6;
+
+$font-size: 1.25rem;
+$font-family: 'Roboto', sans-serif;
+
+/* ----- ----- ----- ----- */
+/* Estilos Generales */
+/* ----- ----- ----- ----- */
+
+body {
+	font-family: $font-family;
+	font-size: $font-size;
+	background-color: $background;
+	color: $on-background;
+}
+
+*::selection {
+	background-color: $primary-active;
+	color: $on-background;
+}
+
+.container {
+	max-width: 540px;
+	width: 90%;
+	margin: 40px auto;
+}
+
+/* ----- ----- ----- ----- */
+/* Logotipo */
+/* ----- ----- ----- ----- */
+
+.logo {
+	margin-bottom: 40px;
+	width: 100%;
+	img {
+		width: 100%;
+		vertical-align: top;
+	}
+}
+
+/* ----- ----- ----- ----- */
+/* Estilos de filas y columnas */
+/* ----- ----- ----- ----- */
+
+.app {
+	.row {
+		margin-bottom: 40px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.col {
+		width: 50%;
+	}
+}
+
+/* ----- ----- ----- ----- */
+/* Estilos generales de inputs y botones */
+/* ----- ----- ----- ----- */
+
+.app {
+	label {
+		line-height: 40px;
+	}
+	input {
+		text-align: center;
+		border: none;
+		outline: none;
+	}
+	.btn {
+		width: 100%;
+		background-color: $primary;
+		color: $on-background;
+		display: inline-block;
+		height: 40px;
+		vertical-align: top;
+		font-size: 1rem;
+		text-align: center;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		&:hover {
+			background-color: $primary-hover;
+		}
+		&.active {
+			background-color: $primary-active;
+		}
+		i {
+			pointer-events: none;
+		}
+	}
+}
+
+/* ----- ----- ----- ----- */
+/* Fila: numero de caracteres */
+/* ----- ----- ----- ----- */
+.app {
+	.num-char {
+		input {
+			height: 40px;
+			width: 100%;
+			cursor: default;
+			background-color: $primary-active;
+			color: $on-background;
+			box-sizing: border-box;
+		}
+		.buttons {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			div {
+				width: 100%;
+				&:nth-child(1) {
+					button {
+						border-radius: 4px 0 0 4px;
+					}
+				}
+				&:nth-child(3) {
+					button {
+						border-radius: 0 4px 4px 0;
+					}
+				}
+			}
+		}
+	}
+	.row {
+		&.generate {
+			margin-bottom: 10px;
+			.col {
+				&:nth-child(1) {
+					width: 30%;
+					&:hover {
+						.btn {
+							&.btn-generate {
+								&::after {
+									background-color: $primary-hover;
+								}
+							}
+						}
+					}
+				}
+				&:nth-child(2) {
+					width: 65%;
+				}
+			}
+			.btn {
+				&.btn-generate {
+					width: 100%;
+					height: 40px;
+					font-size: 18px;
+					padding: 0;
+					line-height: 40px;
+					position: relative;
+					i {
+						margin-left: 20px;
+						position: relative;
+						top: -1px;
+						font-size: 14px;
+					}
+					&::after {
+						content: '';
+						display: inline-block;
+						width: 14px;
+						height: 14px;
+						background-color: $primary;
+						transform: rotate(45deg);
+						position: absolute;
+						top: 13px;
+						right: -7px;
+						transition: all 0.3s ease;
+					}
+				}
+			}
+			.ip-pass {
+				width: 100%;
+				background: none;
+				border-radius: 4px;
+				border: 1px solid rgba(255, 255, 255, 0.25);
+				color: $on-background;
+				height: 40px;
+				line-height: 40px;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				box-sizing: border-box;
+				&:hover {
+					border: 1px solid rgba(255, 255, 255, 0.5);
+					background-color: rgba(255, 255, 255, 0.1);
+				}
+				&::selection {
+					background-color: transparent;
+				}
+			}
+		}
+	}
+}
+
+/* ----- ----- ----- ----- */
+/* Fila: alerta */
+/* ----- ----- ----- ----- */
+.app {
+	.row {
+		&.alert {
+			justify-content: flex-end;
+			.col {
+				width: 65%;
+			}
+			.alert-copy {
+				text-align: center;
+				color: rgba(255, 255, 255, 0);
+				transition: all 0.3s ease;
+				font-size: 0.75rem;
+				p {
+					margin: 0;
+				}
+				&.appear {
+					color: rgba(255, 255, 255, 1);
+				}
+			}
+		}
+	}
+}
+
+/* ----- ----- ----- ----- */
+/* Media Queries */
+/* ----- ----- ----- ----- */
+
+@media screen and (max-width: 500px) {
+	.app {
+		.row {
+			flex-direction: column;
+			margin-bottom: 20px;
+			.col {
+				width: 100%;
+				margin-bottom: 20px;
+			}
+			&.generate {
+				border-top: 1px solid rgba(255, 255, 255, 0.25);
+				padding-top: 40px;
+				.col:nth-child(1),
+				.col:nth-child(2) {
+					width: 100%;
+				}
+				.btn {
+					&.btn-generate {
+						&::after {
+							top: auto;
+							left: 50%;
+							right: 50%;
+							bottom: -7px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

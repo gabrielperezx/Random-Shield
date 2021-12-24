@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+		<link rel="shortcut icon" href="./media/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="./css/normalize.min.css" />
+		<link rel="stylesheet" href="./css/all.min.css" />
+		<link rel="stylesheet" href="./css/custom.css" />
+		<title>Random Shield</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="logo">
+				<img src="./media/logo.png" alt="Logo de Random Shield" />
+			</div>
+			<form action="" class="app" id="app">
+				<div class="row num-char">
+					<div class="col">
+						<label for="num-char">Número de caracteres:</label>
+					</div>
+					<div class="col buttons">
+						<div>
+							<button class="btn" id="btn-minus"><i class="fas fa-minus"></i></button>
+						</div>
+						<div><input type="text" id="num-char" readonly value="10" /></div>
+						<div>
+							<button class="btn" id="btn-plus"><i class="fas fa-plus"></i></button>
+						</div>
+					</div>
+				</div>
+				<div id="config">
+					<div class="row symbols">
+						<div class="col">
+							<label for="btn-symbols">¿Incluir Símbolos?</label>
+						</div>
+						<div class="col">
+							<button class="btn" id="btn-symbols"><i class="fas fa-check"></i></button>
+						</div>
+					</div>
+					<div class="row nums">
+						<div class="col">
+							<label for="btn-nums">¿Incluir Números?</label>
+						</div>
+						<div class="col">
+							<button class="btn" id="btn-nums"><i class="fas fa-check"></i></button>
+						</div>
+					</div>
+					<div class="row mayus">
+						<div class="col">
+							<label for="btn-mayus">¿Incluir Mayúsculas?</label>
+						</div>
+						<div class="col">
+							<button class="btn" id="btn-mayus"><i class="fas fa-check"></i></button>
+						</div>
+					</div>
+				</div>
+				<div class="row generate">
+					<div class="col">
+						<button class="btn btn-generate" id="btn-generate">
+							Generar <i class="fas fa-lock"></i>
+						</button>
+					</div>
+					<div class="col">
+						<input type="text" class="ip-pass" id="ip-pass" readonly />
+					</div>
+				</div>
+				<div class="row alert">
+					<div class="col">
+						<div class="alert-copy" id="alert-copy">
+							<p><i class="fas fa-copy"></i> Texto copiado</p>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script src="./js/app.min.js"></script>
+	</body>
+</html>
