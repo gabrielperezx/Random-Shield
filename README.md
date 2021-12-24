@@ -1,6 +1,6 @@
 # Random Shield | Generador de Contraseñas
 
-![Generador de Contraseñas](https://raw.githubusercontent.com/falconmasters/Generador_Passwords/master/img/thumb.jpg)
+![Generador de Contraseñas](https://raw.githubusercontent.com/gabrielperezx/Random-Shield/master/media/thumb.png)
 
 Por: [Gabriel Pérez](https://github.com/gabrielperezx)
 
